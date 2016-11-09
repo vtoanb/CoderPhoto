@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :photos
+  get 'comments/new'
+
+  resources :photos do
+    resources :comments
+  end
 
   root 'photos#index'
 
